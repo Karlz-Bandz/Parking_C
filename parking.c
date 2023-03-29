@@ -5,6 +5,12 @@ int spentMinutes(int *startMinutes, int *endMinutes)
     return 0;
 }
 
+int setMinutes(int *hour, int *minutes)
+{
+    return *hour * 60 +  *minutes;
+}
+
+
 int formatTime(char *time)
 {
  int minutes;

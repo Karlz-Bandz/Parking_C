@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 #include "parking.c"
 
 int main()
@@ -15,10 +16,18 @@ int main()
     int *endMinutesPtr;
     endMinutesPtr = &endMinutes;
 
+    printf("%d\n", formatTime(testHourPtr));
+    printf("%d", spentMinutes(startMinutesPtr, endMinutesPtr));
+
+    time_t seconds;
+    struct tm *timeStruct;
+    seconds = time(NULL);
+    timeStruct = localtime(&seconds);
+
+    int hour = timeStruct->tm_hour;
+    int minutes = timeStruct->tm_min;
+
+    printf("\nAll minutes of a current day: %d\n", setMinutes(&hour, &minutes));
    
-
-
-   printf("%d\n", formatTime(testHourPtr));
-   printf("%d", spentMinutes(startMinutesPtr, endMinutesPtr));
     
 }
