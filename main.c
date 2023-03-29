@@ -3,17 +3,22 @@
 
 int main()
 {
-    char startHour[6] = "01:30";
-    char *startHourPtr;
-    startHourPtr = startHour;
+    char testHour[6] = "01:30";
+    char *testHourPtr;
+    testHourPtr = testHour;
 
-    char endHour[6] = "15:20";
-    char *endHourPtr;
-    endHourPtr = endHour;
+    int startMinutes = 0;
+    int *startMinutesPtr;
+    startMinutesPtr = &startMinutes;
 
-    //printf("%d", startHourPtr[1] - '0');
+    int endMinutes = 189;
+    int *endMinutesPtr;
+    endMinutesPtr = &endMinutes;
+
+   
 
 
-   printf("%d", claculateTheCost(startHourPtr, endHourPtr));
+   printf("%d\n", formatTime(testHourPtr));
+   printf("%d", spentMinutes(startMinutesPtr, endMinutesPtr));
     
 }
