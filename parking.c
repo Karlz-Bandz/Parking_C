@@ -1,9 +1,27 @@
+#include <math.h>
 #include "parking.h"
 
-int spentMinutes(int *startMinutes, int *endMinutes)
+
+int spentHours(int *startMinutes, int *endMinutes)
 {
-    return 0;
+    int spentMinutes = *endMinutes - *startMinutes;
+    int *spentMinutesPtr;
+    spentMinutesPtr = &spentMinutes;
+    
+    int spentHours = (int)ceil((float)*spentMinutesPtr/60);
+    int *spentHoursPtr;
+    spentHoursPtr = &spentHours;
+
+    
+    
+    return *spentHoursPtr;
 }
+
+int setMinutes(int *hour, int *minutes)
+{
+    return *hour * 60 +  *minutes;
+}
+
 
 int formatTime(char *time)
 {
