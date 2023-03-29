@@ -17,7 +17,7 @@ int main()
     endMinutesPtr = &endMinutes;
 
     printf("%d\n", formatTime(testHourPtr));
-    printf("%d", spentMinutes(startMinutesPtr, endMinutesPtr));
+    printf("%d", setMinutes(startMinutesPtr, endMinutesPtr));
 
     time_t seconds;
     struct tm *timeStruct;
@@ -27,7 +27,16 @@ int main()
     int hour = timeStruct->tm_hour;
     int minutes = timeStruct->tm_min;
 
-    printf("\nAll minutes of a current day: %d\n", setMinutes(&hour, &minutes));
+    int startMin = setMinutes(&hour, &minutes);
+
+    int hour2 = 22;
+    int minutes2 = 45;
+
+    int endMin = setMinutes(&hour2, &minutes2);
+
+    int spentHoursX = spentHours(&startMin, &endMin);
+
+    printf("\n%d", spentHoursX);
    
     
 }
